@@ -1,1 +1,118 @@
-[site_consultoria_flavia_completo (2).zip](https://github.com/user-attachments/files/22681038/site_consultoria_flavia_completo.2.zip)
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flávia Barbosa - Consultoria em Licitações</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #0a2a66;
+      color: white;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px;
+      gap: 40px;
+      flex-wrap: wrap;
+      background: white;
+    }
+
+    .hero img {
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero-text h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #0a2a66;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .btn-whatsapp {
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #25d366;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1ebe5a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #0a2a66;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Flávia Barbosa</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Sobre</a>
+      <a href="#">Serviços</a>
+      <a href="#">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="sua-foto.jpg" alt="Foto de Flávia Barbosa">
+    <div class="hero-text">
+      <h2>Consultoria em Licitações</h2>
+      <p>Ajudo empresas a conquistarem contratos públicos de forma estratégica, segura e lucrativa. 
+      Com experiência prática e resultados comprovados, ofereço consultoria, mentoria e capacitação em licitações.</p>
+      <a class="btn-whatsapp" href="https://wa.me/5538991480560" target="_blank">📲 Fale comigo no WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 - Flávia Barbosa | Consultoria em Licitações</p>
+  </footer>
+</body>
+</html>
+
