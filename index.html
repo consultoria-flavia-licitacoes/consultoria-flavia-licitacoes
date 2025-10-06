@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FBS Consultoria - Consultoria em Licitações</title>
+  <title>FBS Consultoria - Consultoria Especializada em Licitações</title>
+  
+  <meta name="description" content="Consultoria especializada em licitações e contratos públicos. Ajude sua empresa a conquistar segurança e estratégia em Pregões Eletrônicos.">
+  <meta name="keywords" content="licitações, consultoria, FBS Consultoria, contratos públicos, pregão eletrônico, Lei 14.133">
+  
   <style>
     body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; color: #333; }
     
@@ -34,18 +38,69 @@
     .section { padding: 50px; text-align: center; }
     .section h2 { color: #0a2a66; margin-bottom: 30px; font-size: 28px; }
 
-    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .service-card { background: white; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s; }
+    /* Cards de Serviço (ajustados para 3 pacotes) */
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+    .service-card { 
+        background: white; 
+        border-radius: 10px; 
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
+        overflow: hidden; 
+        transition: transform 0.3s; 
+        padding-bottom: 20px; /* Espaço para o botão */
+        display: flex; /* Para centralizar o botão */
+        flex-direction: column;
+        justify-content: space-between;
+    }
     .service-card:hover { transform: scale(1.03); }
     .service-card img { width: 100%; height: 180px; object-fit: cover; }
     .service-card h3 { margin: 15px 0 10px; color: #0a2a66; }
-    .service-card p { padding: 0 15px 20px; font-size: 15px; line-height: 1.5; }
+    .service-card p { padding: 0 15px; font-size: 15px; line-height: 1.5; text-align: left; } /* Texto dos pacotes alinhado à esquerda */
+    .service-card .btn-whatsapp { 
+        margin-top: 15px; 
+        align-self: center; /* Centraliza o botão dentro do card */
+    }
 
     footer { text-align: center; background: #0a2a66; color: white; padding: 20px; margin-top: 40px; }
+
+    /* --- INÍCIO DA OTIMIZAÇÃO PARA CELULAR (RESPONSIVIDADE) --- */
+    @media (max-width: 768px) {
+        /* Ajuste do Cabeçalho */
+        header {
+            flex-direction: column; 
+            padding: 15px 20px;
+        }
+        .logo-container { justify-content: center; }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            display: block; 
+            margin: 5px 0;
+        }
+        
+        /* Ajuste da Seção Principal (Hero) */
+        .hero {
+            flex-direction: column; 
+            padding: 30px 20px;
+        }
+        .hero-text {
+            text-align: center;
+        }
+        .hero img {
+            max-width: 80%; 
+            order: -1; 
+            margin-bottom: 20px;
+        }
+        
+        /* Ajuste dos Cards de Serviço */
+        .services {
+            grid-template-columns: 1fr; /* Coloca os cards em uma única coluna */
+        }
+    }
+    /* --- FIM DA OTIMIZAÇÃO PARA CELULAR (RESPONSIVIDADE) --- */
   </style>
 </head>
 <body>
-  <!-- Cabeçalho -->
   <header>
     <div class="logo-container">
       <img src="IMG_4928.jpeg" alt="Logo FBS Consultoria">
@@ -59,7 +114,6 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <div class="hero">
     <div class="hero-text">
       <h1>Consultoria Especializada em Licitações</h1>
@@ -69,30 +123,36 @@
     <img src="b50f1646-f14f-43da-bb2d-acc162a8a3bd.jpeg" alt="Foto de Flávia Barbosa">
   </div>
 
-  <!-- Serviços Section -->
   <div class="section">
-    <h2>Meus Serviços</h2>
+    <h2>Nossos Pacotes de Consultoria</h2>
     <div class="services">
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Análise de Editais">
-        <h3>Análise de Editais</h3>
-        <p>Leitura e interpretação completa de editais para evitar erros e garantir participação assertiva.</p>
-      </div>
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Consultoria Estratégica">
-        <h3>Consultoria Estratégica</h3>
-        <p>Auxílio personalizado para aumentar a competitividade da sua empresa em licitações.</p>
-      </div>
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Treinamentos">
-        <h3>Treinamentos</h3>
-        <p>Capacitação prática para você e sua equipe dominarem os processos de licitação.</p>
-      </div>
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Gestão de Documentos">
-        <h3>Gestão de Documentos</h3>
-        <p>Organização completa da documentação necessária para participação em licitações.</p>
-      </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Análise Jurídica e Risco">
+            <div>
+                <h3>01. ANÁLISE JURÍDICA EXPRESSA</h3>
+                <p><strong>Avaliação Rápida de Risco.</strong> Ideal para tomada de decisão em 48h.<br><br><strong>Análise de Viabilidade (Direito):</strong> Checagem completa do edital (riscos, falhas, exigências) com base na Lei 14.133/2021.<br><strong>Parecer de Risco:</strong> Documento com a recomendação final: Participar ou Abster-se.</p>
+            </div>
+            <a class="btn-whatsapp" href="https://wa.me/5538991480560" target="_blank">Falar com a Consultoria</a>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Documentação e Organização">
+            <div>
+                <h3>02. HABILITAÇÃO ASSEGURADA</h3>
+                <p><strong>Documentação Impecável.</strong> Ideal para quem já decidiu participar e precisa de segurança.<br><br>Tudo do Pacote 01, mais:<br><strong>Preparação e Organização Documental:</strong> Montagem, formatação e conferência de todos os documentos de Habilitação e Proposta.<br><strong>Análise Estratégica de Capacidade (Gestão):</strong> Revisão de atestados e requisitos técnicos para máxima aderência ao edital.</p>
+            </div>
+            <a class="btn-whatsapp" href="https://wa.me/5538991480560" target="_blank">Falar com a Consultoria</a>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Suporte e Defesa Legal">
+            <div>
+                <h3>03. SUCESSO PREMIUM</h3>
+                <p><strong>Gestão da Disputa e Defesa Total.</strong> O suporte do primeiro lance ao contrato assinado.<br><br>Tudo do Pacote 02, mais:<br><strong>Suporte Tático em Tempo Real:</strong> Orientação e gestão de lances no Pregão Eletrônico.<br><strong>Defesa Legal:</strong> Elaboração e protocolo de um Recurso ou uma Impugnação administrativa (em caso de inabilitação ou erro).</p>
+            </div>
+            <a class="btn-whatsapp" href="https://wa.me/5538991480560" target="_blank">Falar com a Consultoria</a>
+        </div>
+        
     </div>
   </div>
 
