@@ -3,101 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FBS Consultoria - Consultoria Especializada em Licitações</title>
-  
-  <meta name="description" content="Consultoria especializada em licitações e contratos públicos. Ajude sua empresa a conquistar segurança e estratégia em Pregões Eletrônicos.">
-  <meta name="keywords" content="licitações, consultoria, FBS Consultoria, contratos públicos, pregão eletrônico, Lei 14.133">
-  
+  <title>FBS Consultoria - Como Vencer Licitações</title>
+  <meta name="description" content="Consultoria especializada em licitações e contratos públicos. Descubra os 7 passos para ganhar uma licitação e conquiste contratos lucrativos com a FBS Consultoria.">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; color: #333; }
-    
+    * { box-sizing: border-box; }
+    body { font-family: 'Poppins', Arial, sans-serif; margin: 0; background: #f8f9fb; color: #333; }
+
     /* Cabeçalho */
-    header { 
+    header {
       background: linear-gradient(90deg, #0a2a66, #cfa93f);
-      padding: 10px 40px; 
-      color: white; 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
+      color: white;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .logo-container { display: flex; align-items: center; }
-    .logo-container img { height: 60px; margin-right: 15px; }
-    .logo-container h1 { font-size: 22px; margin: 0; }
-    nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+    .logo-container img { height: 60px; margin-right: 15px; border-radius: 10px; }
+    .logo-container h1 { font-size: 22px; margin: 0; font-weight: 600; }
+    nav a {
+      color: white; text-decoration: none; margin-left: 20px; font-weight: bold; transition: 0.3s;
+    }
     nav a:hover { color: #fdd835; }
 
     /* Hero */
-    .hero { display: flex; align-items: center; justify-content: space-around; padding: 50px; background: white; flex-wrap: wrap; }
-    .hero img { max-width: 280px; border-radius: 10px; }
-    .hero-text { max-width: 500px; }
-    .hero-text h1 { color: #0a2a66; font-size: 32px; }
-    .btn-whatsapp { display: inline-block; margin-top: 20px; padding: 12px 20px; background: #25d366; color: white; border-radius: 5px; text-decoration: none; font-weight: bold; }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=60') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10, 42, 102, 0.7);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: auto;
+    }
+    .hero-content h1 { font-size: 36px; margin-bottom: 15px; }
+    .hero-content p { font-size: 18px; margin-bottom: 30px; }
+    .btn-whatsapp {
+      background: #25d366; color: white; padding: 15px 30px; border-radius: 8px;
+      text-decoration: none; font-weight: bold; transition: 0.3s;
+    }
     .btn-whatsapp:hover { background: #1ebe5a; }
 
-    /* Seções */
-    .section { padding: 50px; text-align: center; }
-    .section h2 { color: #0a2a66; margin-bottom: 30px; font-size: 28px; }
-
-    /* Cards de Serviço (ajustados para 3 pacotes) */
-    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-    .service-card { 
-        background: white; 
-        border-radius: 10px; 
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
-        overflow: hidden; 
-        transition: transform 0.3s; 
-        padding-bottom: 20px; /* Espaço para o botão */
-        display: flex; /* Para centralizar o botão */
-        flex-direction: column;
-        justify-content: space-between;
+    /* Seção dos 7 Passos */
+    .steps {
+      text-align: center;
+      padding: 60px 30px;
+      background: white;
     }
-    .service-card:hover { transform: scale(1.03); }
-    .service-card img { width: 100%; height: 180px; object-fit: cover; }
-    .service-card h3 { margin: 15px 0 10px; color: #0a2a66; }
-    .service-card p { padding: 0 15px; font-size: 15px; line-height: 1.5; text-align: left; } /* Texto dos pacotes alinhado à esquerda */
-    .service-card .btn-whatsapp { 
-        margin-top: 15px; 
-        align-self: center; /* Centraliza o botão dentro do card */
+    .steps h2 {
+      font-size: 30px;
+      color: #0a2a66;
+      margin-bottom: 40px;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .step {
+      background: #f1f3f8;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .step:hover { transform: translateY(-5px); }
+    .step h3 {
+      color: #0a2a66;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .step p { font-size: 15px; color: #444; }
+
+    /* Seção CTA */
+    .cta {
+      background: linear-gradient(90deg, #0a2a66, #cfa93f);
+      color: white;
+      text-align: center;
+      padding: 70px 30px;
+    }
+    .cta h2 { font-size: 28px; margin-bottom: 20px; }
+    .cta p { font-size: 18px; margin-bottom: 30px; }
+
+    footer {
+      background: #0a2a66;
+      color: white;
+      text-align: center;
+      padding: 20px;
     }
 
-    footer { text-align: center; background: #0a2a66; color: white; padding: 20px; margin-top: 40px; }
-
-    /* --- INÍCIO DA OTIMIZAÇÃO PARA CELULAR (RESPONSIVIDADE) --- */
     @media (max-width: 768px) {
-        /* Ajuste do Cabeçalho */
-        header {
-            flex-direction: column; 
-            padding: 15px 20px;
-        }
-        .logo-container { justify-content: center; }
-        nav {
-            margin-top: 10px;
-        }
-        nav a {
-            display: block; 
-            margin: 5px 0;
-        }
-        
-        /* Ajuste da Seção Principal (Hero) */
-        .hero {
-            flex-direction: column; 
-            padding: 30px 20px;
-        }
-        .hero-text {
-            text-align: center;
-        }
-        .hero img {
-            max-width: 80%; 
-            order: -1; 
-            margin-bottom: 20px;
-        }
-        
-        /* Ajuste dos Cards de Serviço */
-        .services {
-            grid-template-columns: 1fr; /* Coloca os cards em uma única coluna */
-        }
+      header { flex-direction: column; text-align: center; }
+      nav { margin-top: 10px; }
+      .hero-content h1 { font-size: 28px; }
+      .steps-grid { grid-template-columns: 1fr; }
     }
-    /* --- FIM DA OTIMIZAÇÃO PARA CELULAR (RESPONSIVIDADE) --- */
   </style>
 </head>
 <body>
@@ -107,57 +119,45 @@
       <h1>FBS Consultoria</h1>
     </div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="servicos.html">Serviços</a>
-      <a href="contato.html">Contato</a>
+      <a href="#hero">Início</a>
+      <a href="#steps">7 Passos</a>
+      <a href="#pacotes">Pacotes</a>
+      <a href="#contato">Contato</a>
     </nav>
   </header>
 
-  <div class="hero">
-    <div class="hero-text">
-      <h1>Consultoria Especializada em Licitações</h1>
-      <p>Ajudo empresas a conquistarem contratos públicos com segurança e estratégia.</p>
-      <a class="btn-whatsapp" href="https://wa.me/5538991480560" target="_blank">💬 Fale comigo no WhatsApp</a>
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Transforme Licitações em Oportunidades Lucrativas</h1>
+      <p>Descubra como empresas comuns estão faturando alto com o setor público. Aprenda o passo a passo com a FBS Consultoria.</p>
+      <a href="https://wa.me/5538991480560" class="btn-whatsapp" target="_blank">💬 Quero Aprender Agora</a>
     </div>
-    <img src="b50f1646-f14f-43da-bb2d-acc162a8a3bd.jpeg" alt="Foto de Flávia Barbosa">
-  </div>
+  </section>
 
-  <div class="section">
-    <h2>Nossos Pacotes de Consultoria</h2>
-    <div class="services">
-        <div class="service-card">
-            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Análise Jurídica e Risco">
-            <div>
-                <h3>01. ANÁLISE JURÍDICA EXPRESSA</h3>
-                <p><strong>Avaliação Rápida de Risco.</strong> Ideal para tomada de decisão em 48h.<br><br><strong>Análise de Viabilidade :</strong> Checagem completa do edital (riscos, falhas, exigências) com base na Lei 14.133/2021.<br><strong>Parecer de Risco:</strong> Documento com a recomendação final: Participar ou Abster-se.</p>
-            </div>
-            <a class="btn-whatsapp" href="https://wa.me/5538991480560" target="_blank">Falar com a Consultoria</a>
-        </div>
-
-        <div class="service-card">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Documentação e Organização">
-            <div>
-                <h3>02. HABILITAÇÃO ASSEGURADA</h3>
-                <p><strong>Documentação Impecável.</strong> Ideal para quem já decidiu participar e precisa de segurança.<br><br>Tudo do Pacote 01, mais:<br><strong>Preparação e Organização Documental:</strong> Montagem, formatação e conferência de todos os documentos de Habilitação e Proposta.<br><strong>Análise Estratégica de Capacidade (Gestão):</strong> Revisão de atestados e requisitos técnicos para máxima aderência ao edital.</p>
-            </div>
-            <a class="btn-whatsapp" href="https://wa.me/5538991480560" target="_blank">Falar com a Consultoria</a>
-        </div>
-
-        <div class="service-card">
-            <img src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Suporte e Defesa Legal">
-            <div>
-                <h3>03. SUCESSO PREMIUM</h3>
-                <p><strong>Gestão da Disputa e Defesa Total.</strong> O suporte do primeiro lance ao contrato assinado.<br><br>Tudo do Pacote 02, mais:<br><strong>Suporte Tático em Tempo Real:</strong> Orientação e gestão de lances no Pregão Eletrônico.<br><strong>Defesa Legal:</strong> Elaboração e protocolo de um Recurso ou uma Impugnação administrativa (em caso de inabilitação ou erro).</p>
-            </div>
-            <a class="btn-whatsapp" href="https://wa.me/5538991480560" target="_blank">Falar com a Consultoria</a>
-        </div>
-        
+  <!-- 7 Passos -->
+  <section id="steps" class="steps">
+    <h2>🚀 7 Passos Para Ganhar uma Licitação</h2>
+    <div class="steps-grid">
+      <div class="step"><h3>1️⃣ Escolha o Edital Certo</h3><p>Selecione licitações que se encaixem na sua empresa e aumentem suas chances de vitória.</p></div>
+      <div class="step"><h3>2️⃣ Analise o Edital com Cuidado</h3><p>Evite erros interpretando corretamente cada exigência — conte com nossa análise especializada.</p></div>
+      <div class="step"><h3>3️⃣ Organize sua Documentação</h3><p>Tenha todos os documentos atualizados e em formato adequado para habilitação.</p></div>
+      <div class="step"><h3>4️⃣ Monte uma Proposta Estratégica</h3><p>Aprenda a precificar e apresentar sua proposta de forma competitiva e legalmente segura.</p></div>
+      <div class="step"><h3>5️⃣ Participe do Pregão com Segurança</h3><p>Com orientação em tempo real, saiba o momento certo de dar cada lance.</p></div>
+      <div class="step"><h3>6️⃣ Faça a Defesa Técnica</h3><p>Recorra e impugne de forma profissional para não perder oportunidades injustamente.</p></div>
+      <div class="step"><h3>7️⃣ Assine e Gerencie o Contrato</h3><p>Garanta o cumprimento do contrato e construa uma reputação sólida no mercado público.</p></div>
     </div>
-  </div>
+  </section>
+
+  <!-- Chamada para ação -->
+  <section id="contato" class="cta">
+    <h2>Quer Vencer Sua Próxima Licitação?</h2>
+    <p>Escolha um dos pacotes de consultoria e tenha a FBS ao seu lado do início ao fim do processo.</p>
+    <a href="https://wa.me/5538991480560" class="btn-whatsapp" target="_blank">💼 Falar com a Consultoria</a>
+  </section>
 
   <footer>
-    <p>© 2025 - FBS Consultoria | Especialista em Licitações</p>
+    © 2025 - FBS Consultoria | Especialista em Licitações
   </footer>
 </body>
 </html>
