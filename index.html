@@ -1,163 +1,298 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FBS Consultoria - Como Vencer Licitações</title>
-  <meta name="description" content="Consultoria especializada em licitações e contratos públicos. Descubra os 7 passos para ganhar uma licitação e conquiste contratos lucrativos com a FBS Consultoria.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FBS Consultoria — Consultoria em Licitações</title>
+  <meta name="description" content="FBS Consultoria - Especialista em licitações. Descubra os 7 passos para vencer uma licitação e conheça nossos planos." />
+  <meta name="author" content="FBS Consultoria" />
+
+  <!-- Fonts (system + Poppins fallback) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; }
-    body { font-family: 'Poppins', Arial, sans-serif; margin: 0; background: #f8f9fb; color: #333; }
-
-    /* Cabeçalho */
-    header {
-      background: linear-gradient(90deg, #0a2a66, #cfa93f);
-      color: white;
-      padding: 20px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    :root{
+      --blue:#0a2a66;
+      --gold:#cfa93f;
+      --accent:#1e437a;
+      --muted:#6b7280;
+      --card-bg: #ffffff;
+      --glass: rgba(255,255,255,0.06);
     }
-    .logo-container { display: flex; align-items: center; }
-    .logo-container img { height: 60px; margin-right: 15px; border-radius: 10px; }
-    .logo-container h1 { font-size: 22px; margin: 0; font-weight: 600; }
-    nav a {
-      color: white; text-decoration: none; margin-left: 20px; font-weight: bold; transition: 0.3s;
-    }
-    nav a:hover { color: #fdd835; }
-
-    /* Hero */
-    .hero {
-      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=60') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-      position: relative;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(10, 42, 102, 0.7);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      margin: auto;
-    }
-    .hero-content h1 { font-size: 36px; margin-bottom: 15px; }
-    .hero-content p { font-size: 18px; margin-bottom: 30px; }
-    .btn-whatsapp {
-      background: #25d366; color: white; padding: 15px 30px; border-radius: 8px;
-      text-decoration: none; font-weight: bold; transition: 0.3s;
-    }
-    .btn-whatsapp:hover { background: #1ebe5a; }
-
-    /* Seção dos 7 Passos */
-    .steps {
-      text-align: center;
-      padding: 60px 30px;
-      background: white;
-    }
-    .steps h2 {
-      font-size: 30px;
-      color: #0a2a66;
-      margin-bottom: 40px;
-    }
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .step {
-      background: #f1f3f8;
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .step:hover { transform: translateY(-5px); }
-    .step h3 {
-      color: #0a2a66;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-    .step p { font-size: 15px; color: #444; }
-
-    /* Seção CTA */
-    .cta {
-      background: linear-gradient(90deg, #0a2a66, #cfa93f);
-      color: white;
-      text-align: center;
-      padding: 70px 30px;
-    }
-    .cta h2 { font-size: 28px; margin-bottom: 20px; }
-    .cta p { font-size: 18px; margin-bottom: 30px; }
-
-    footer {
-      background: #0a2a66;
-      color: white;
-      text-align: center;
-      padding: 20px;
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Poppins',Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;color:#1b2430}
+    body{
+      background: linear-gradient(180deg,#f4f6fb 0%, #eef2f8 100%);
+      -webkit-font-smoothing:antialiased;
+      scroll-behavior: smooth;
     }
 
-    @media (max-width: 768px) {
-      header { flex-direction: column; text-align: center; }
-      nav { margin-top: 10px; }
-      .hero-content h1 { font-size: 28px; }
-      .steps-grid { grid-template-columns: 1fr; }
+    /* TOP BAR / HEADER */
+    header{
+      position:sticky; top:0; z-index:60;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(90deg, rgba(10,42,102,0.95), rgba(207,169,63,0.95));
+      color: #fff;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 26px;
+      box-shadow: 0 6px 18px rgba(10,42,102,0.12);
+    }
+    .brand{display:flex; align-items:center; gap:14px}
+    .brand img{height:56px; width:auto; border-radius:8px; object-fit:cover; box-shadow: 0 4px 12px rgba(0,0,0,0.15);}
+    .brand h1{font-size:18px; margin:0; font-weight:700; letter-spacing:0.2px}
+    nav a{color:rgba(255,255,255,0.95); text-decoration:none; margin-left:18px; font-weight:600;}
+    nav a:hover{color:#fff; text-decoration:underline; opacity:0.95}
+
+    /* HERO */
+    .hero{
+      display:flex; gap:36px; align-items:center; justify-content:space-between;
+      max-width:1200px; margin:28px auto; padding:36px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.92));
+      border-radius:18px; box-shadow: 0 10px 30px rgba(19,38,85,0.08);
+    }
+    .hero-left{flex:1; padding:6px 22px;}
+    .hero-left small{display:inline-block; background:var(--gold); color:var(--blue); padding:6px 12px; border-radius:999px; font-weight:700; font-size:13px}
+    .hero-left h2{font-size:32px; margin:18px 0 12px; color:var(--blue); line-height:1.05}
+    .hero-left p{color:var(--muted); font-size:16px; margin:0 0 18px}
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+    .btn-primary{background:linear-gradient(90deg,var(--gold), #f5d37f); color:var(--blue); padding:14px 20px; border-radius:12px; font-weight:700; border:none; text-decoration:none; box-shadow: 0 8px 24px rgba(207,169,63,0.18)}
+    .btn-outline{background:transparent; color:var(--blue); padding:12px 18px; border-radius:12px; border:2px solid rgba(10,42,102,0.08); text-decoration:none; font-weight:600}
+    .hero-right{width:300px; flex-shrink:0; display:flex; justify-content:center; align-items:center}
+    .profile-photo{width:300px; height:300px; border-radius:16px; object-fit:cover; box-shadow: 0 18px 50px rgba(10,42,102,0.18); border:6px solid #fff; transform:translateY(0)}
+
+    /* 7 STEPS */
+    .section{max-width:1200px; margin:26px auto; padding:28px}
+    .steps{display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:18px}
+    .step-card{background:linear-gradient(180deg,#fff,#fbfdff); border-radius:12px; padding:20px; border-left:6px solid var(--blue); box-shadow: 0 6px 20px rgba(23,33,68,0.06); transition: transform .28s ease, box-shadow .28s ease}
+    .step-card:hover{transform:translateY(-6px); box-shadow: 0 14px 40px rgba(23,33,68,0.09)}
+    .step-num{width:46px;height:46px;border-radius:10px;background:var(--gold); color:var(--blue); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:18px; margin-bottom:12px}
+    .step-title{font-weight:700; color:var(--blue); margin:0 0 8px}
+    .step-desc{color:var(--muted); margin:0; font-size:14px}
+
+    /* PACKAGES */
+    .packages-wrap{max-width:1200px; margin:22px auto; padding:26px}
+    .packages-grid{display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:22px}
+    .pkg{border-radius:14px; padding:22px; color:var(--blue); background:linear-gradient(180deg,#fff,#fcfeff); box-shadow: 0 10px 30px rgba(11,27,58,0.06); position:relative; overflow:hidden; border-top:6px solid var(--gold); transition: transform .28s ease}
+    .pkg:hover{transform:translateY(-8px)}
+    .pkg h3{margin:0 0 8px; font-size:18px; color:var(--blue)}
+    .pkg p{color:var(--muted); margin:0 0 14px; font-size:14px}
+    .pkg ul{padding-left:18px; margin:8px 0 12px; color:#45505f}
+    .pkg .pkg-cta{display:inline-block; padding:10px 16px; border-radius:10px; background:var(--blue); color:#fff; text-decoration:none; font-weight:700}
+    .pkg .pkg-cta:hover{background:#082244}
+
+    /* HIGHLIGHT BANNER */
+    .highlight{
+      max-width:1200px; margin:18px auto; padding:20px; border-radius:12px; background: linear-gradient(90deg, rgba(10,42,102,0.95), rgba(207,169,63,0.95)); color:white; display:flex; gap:20px; align-items:center; justify-content:space-between;
+      box-shadow: 0 14px 40px rgba(10,42,102,0.12);
+    }
+    .highlight .txt{max-width:900px}
+    .highlight h3{margin:0 0 8px; font-size:20px}
+    .highlight p{margin:0; color:rgba(255,255,255,0.95)}
+
+    /* CONTACT / FOOTER */
+    footer{margin-top:32px; background:var(--blue); color:#fff; padding:26px 18px; text-align:center; border-top:6px solid var(--gold)}
+    .contact-row{display:flex; gap:12px; align-items:center; justify-content:center; flex-wrap:wrap}
+    .contact-row a{color:#fff; text-decoration:none; font-weight:700; background:rgba(255,255,255,0.06); padding:10px 16px; border-radius:10px}
+
+    /* FLOATING WHATSAPP */
+    .whatsapp-float{
+      position:fixed; right:18px; bottom:18px; z-index:120;
+      background: #25d366; color:#fff; border-radius:14px; box-shadow: 0 10px 30px rgba(37,211,102,0.18);
+      display:flex; align-items:center; gap:10px; padding:12px 16px; text-decoration:none; font-weight:800
+    }
+
+    /* small screens */
+    @media (max-width:900px){
+      .hero{flex-direction:column; text-align:center}
+      .hero-right{order:-1}
+      .profile-photo{width:240px;height:240px}
+      header{padding:12px}
     }
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
-    <div class="logo-container">
-      <img src="IMG_4928.jpeg" alt="Logo FBS Consultoria">
-      <h1>FBS Consultoria</h1>
+    <div class="brand-left">
+      <div class="brand">
+        <img src="IMG_4928.jpeg" alt="Logo FBS Consultoria" onerror="this.style.display='none'"/>
+        <h1>FBS Consultoria</h1>
+      </div>
     </div>
+
     <nav>
       <a href="#hero">Início</a>
       <a href="#steps">7 Passos</a>
-      <a href="#pacotes">Pacotes</a>
+      <a href="#plans">Planos</a>
       <a href="#contato">Contato</a>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <h1>Transforme Licitações em Oportunidades Lucrativas</h1>
-      <p>Descubra como empresas comuns estão faturando alto com o setor público. Aprenda o passo a passo com a FBS Consultoria.</p>
-      <a href="https://wa.me/5538991480560" class="btn-whatsapp" target="_blank">💬 Quero Aprender Agora</a>
-    </div>
-  </section>
+  <!-- HERO -->
+  <main>
+    <section id="hero" class="hero" aria-label="Apresentação">
+      <div class="hero-left">
+        <small>NAVEGUE COM SEGURANÇA</small>
+        <h2>Conquiste contratos públicos com estratégia e segurança</h2>
+        <p>Sou Flávia Barbosa — especialista em licitações. Transformo processos complexos em vitórias comerciais para sua empresa.</p>
+        <div class="cta-row">
+          <a class="btn-primary" href="https://wa.me/5538991480560" target="_blank" rel="noopener">💬 Solicitar Consultoria</a>
+          <a class="btn-outline" href="#plans">Ver Planos</a>
+        </div>
+      </div>
 
-  <!-- 7 Passos -->
-  <section id="steps" class="steps">
-    <h2>🚀 7 Passos Para Ganhar uma Licitação</h2>
-    <div class="steps-grid">
-      <div class="step"><h3>1️⃣ Escolha o Edital Certo</h3><p>Selecione licitações que se encaixem na sua empresa e aumentem suas chances de vitória.</p></div>
-      <div class="step"><h3>2️⃣ Analise o Edital com Cuidado</h3><p>Evite erros interpretando corretamente cada exigência — conte com nossa análise especializada.</p></div>
-      <div class="step"><h3>3️⃣ Organize sua Documentação</h3><p>Tenha todos os documentos atualizados e em formato adequado para habilitação.</p></div>
-      <div class="step"><h3>4️⃣ Monte uma Proposta Estratégica</h3><p>Aprenda a precificar e apresentar sua proposta de forma competitiva e legalmente segura.</p></div>
-      <div class="step"><h3>5️⃣ Participe do Pregão com Segurança</h3><p>Com orientação em tempo real, saiba o momento certo de dar cada lance.</p></div>
-      <div class="step"><h3>6️⃣ Faça a Defesa Técnica</h3><p>Recorra e impugne de forma profissional para não perder oportunidades injustamente.</p></div>
-      <div class="step"><h3>7️⃣ Assine e Gerencie o Contrato</h3><p>Garanta o cumprimento do contrato e construa uma reputação sólida no mercado público.</p></div>
-    </div>
-  </section>
+      <div class="hero-right">
+        <!-- sua foto -->
+        <img src="b50f1646-f14f-43da-bb2d-acc162a8a3bd.jpeg" alt="Foto de Flávia Barbosa" class="profile-photo" />
+      </div>
+    </section>
 
-  <!-- Chamada para ação -->
-  <section id="contato" class="cta">
-    <h2>Quer Vencer Sua Próxima Licitação?</h2>
-    <p>Escolha um dos pacotes de consultoria e tenha a FBS ao seu lado do início ao fim do processo.</p>
-    <a href="https://wa.me/5538991480560" class="btn-whatsapp" target="_blank">💼 Falar com a Consultoria</a>
-  </section>
+    <!-- 7 PASSOS -->
+    <section id="steps" class="section" aria-label="7 passos">
+      <h2 style="text-align:center; color:var(--blue); margin-bottom:18px">🚀 7 Passos Para Ganhar uma Licitação</h2>
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h4 class="step-title">Escolha o Edital Certo</h4>
+          <p class="step-desc">Selecionamos oportunidades alinhadas ao seu core business para maximizar chances reais de vitória.</p>
+        </div>
 
-  <footer>
-    © 2025 - FBS Consultoria | Especialista em Licitações
-  </footer>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h4 class="step-title">Analise o Edital com Precisão</h4>
+          <p class="step-desc">Identificamos riscos e exigências que podem desclassificar propostas — você participa com segurança.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h4 class="step-title">Organize a Documentação</h4>
+          <p class="step-desc">Montagem e conferência de documentos conforme a legislação e critérios do edital.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h4 class="step-title">Monte Proposta Estratégica</h4>
+          <p class="step-desc">Precificação e estrutura da proposta para ser competitiva sem abrir mão da margem.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">5</div>
+          <h4 class="step-title">Participe no Momento Certo</h4>
+          <p class="step-desc">Acompanhamento em tempo real no pregão eletrônico — você toma decisões informadas.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">6</div>
+          <h4 class="step-title">Defesa Técnica e Recursos</h4>
+          <p class="step-desc">Elaboração de recursos e impugnações com embasamento técnico para reverter indeferimentos.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">7</div>
+          <h4 class="step-title">Assinatura e Execução do Contrato</h4>
+          <p class="step-desc">Apoio na assinatura e gestão inicial do contrato para entregar resultados e reputação ao setor público.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHT CTA -->
+    <section class="highlight" aria-hidden="false">
+      <div class="txt">
+        <h3>Precisa de ajuda agora?</h3>
+        <p>Escolha um pacote e tenha suporte de uma especialista do início ao fim do processo. Atendimento rápido e foco em resultado.</p>
+      </div>
+      <div>
+        <a class="btn-primary" href="https://wa.me/5538991480560" target="_blank" rel="noopener">Fale com a Flávia</a>
+      </div>
+    </section>
+
+    <!-- PACKAGES (no menu 'Planos') -->
+    <section id="plans" class="packages-wrap" aria-label="Planos de consultoria">
+      <h2 style="text-align:center; color:var(--blue); margin-bottom:14px">Planos de Consultoria</h2>
+      <p style="text-align:center; color:var(--muted); max-width:900px; margin:0 auto 18px">Escolha o pacote ideal — os preços não são exibidos aqui. Clique em "Solicitar" para conversar sobre o melhor formato para sua empresa.</p>
+
+      <div class="packages-grid">
+        <article class="pkg" aria-labelledby="pkg1">
+          <h3 id="pkg1">ANÁLISE JURÍDICA EXPRESSA</h3>
+          <p><strong>Ideal para decisão rápida.</strong> Avaliamos o edital, identificamos riscos e entregamos um parecer objetivo com recomendação.</p>
+          <ul>
+            <li>Análise completa do edital</li>
+            <li>Parecer de Risco (Participar / Abster)</li>
+            <li>Prazo de entrega curto</li>
+          </ul>
+          <a class="pkg-cta" href="https://wa.me/5538991480560?text=Tenho%20interesse%20no%20Plano%20An%C3%A1lise%20Jur%C3%ADdica%20Expressa" target="_blank" rel="noopener">Solicitar</a>
+        </article>
+
+        <article class="pkg" aria-labelledby="pkg2">
+          <h3 id="pkg2">HABILITAÇÃO ASSEGURADA</h3>
+          <p><strong>Documentação na mão.</strong> Montagem, formatação e conferência de toda a documentação de habilitação e proposta.</p>
+          <ul>
+            <li>Tudo do Plano Expressa</li>
+            <li>Organização e conferência documental</li>
+            <li>Suporte para exigências técnicas</li>
+          </ul>
+          <a class="pkg-cta" href="https://wa.me/5538991480560?text=Tenho%20interesse%20no%20Plano%20Habilita%C3%A7%C3%A3o%20Assegurada" target="_blank" rel="noopener">Solicitar</a>
+        </article>
+
+        <article class="pkg" aria-labelledby="pkg3">
+          <h3 id="pkg3">SUCESSO PREMIUM</h3>
+          <p><strong>Do lance ao contrato.</strong> Gestão completa, suporte em tempo real no pregão e defesa técnica (recursos/impugnações).</p>
+          <ul>
+            <li>Tudo do Plano Habilitação</li>
+            <li>Acompanhamento em tempo real no pregão</li>
+            <li>Elaboração de recursos e impugnações</li>
+          </ul>
+          <a class="pkg-cta" href="https://wa.me/5538991480560?text=Tenho%20interesse%20no%20Plano%20Sucesso%20Premium" target="_blank" rel="noopener">Solicitar</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <footer id="contato">
+      <div style="max-width:1100px; margin:0 auto; padding:6px 8px;">
+        <div style="margin-bottom:12px; font-weight:700; font-size:16px">Entre em contato</div>
+        <div class="contact-row">
+          <a href="https://wa.me/5538991480560" target="_blank" rel="noopener">WhatsApp: (38) 99148-0560</a>
+          <a href="mailto:fbs.consultoria360@gmail.com">E-mail: fbs.consultoria360@gmail.com</a>
+        </div>
+
+        <p style="color:rgba(255,255,255,0.87); margin-top:14px">© 2025 FBS Consultoria | Especialista em Licitações</p>
+      </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a class="whatsapp-float" href="https://wa.me/5538991480560" target="_blank" rel="noopener">
+      💬 Falar no WhatsApp
+    </a>
+
+  </main>
+
+  <!-- Optional: small script to add tracking of active menu (visual) -->
+  <script>
+    // highlight menu on scroll (simple)
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('header nav a');
+
+    function onScroll(){
+      const scrollPos = window.scrollY + 120;
+      sections.forEach(sec=>{
+        const top = sec.offsetTop;
+        const bottom = top + sec.offsetHeight;
+        const id = sec.getAttribute('id');
+        const link = document.querySelector('header nav a[href="#'+id+'"]');
+        if(link){
+          if(scrollPos >= top && scrollPos < bottom){
+            link.style.textDecoration='underline';
+          } else {
+            link.style.textDecoration='none';
+          }
+        }
+      });
+    }
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+  </script>
+
 </body>
 </html>
