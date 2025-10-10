@@ -1,298 +1,201 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>FBS Consultoria — Consultoria em Licitações</title>
-  <meta name="description" content="FBS Consultoria - Especialista em licitações. Descubra os 7 passos para vencer uma licitação e conheça nossos planos." />
-  <meta name="author" content="FBS Consultoria" />
-
-  <!-- Fonts (system + Poppins fallback) -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FBS Consultoria - Licitações com Estratégia</title>
   <style>
-    :root{
-      --blue:#0a2a66;
-      --gold:#cfa93f;
-      --accent:#1e437a;
-      --muted:#6b7280;
-      --card-bg: #ffffff;
-      --glass: rgba(255,255,255,0.06);
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #f2f5ff, #ffffff);
+      color: #333;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:'Poppins',Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;color:#1b2430}
-    body{
-      background: linear-gradient(180deg,#f4f6fb 0%, #eef2f8 100%);
-      -webkit-font-smoothing:antialiased;
-      scroll-behavior: smooth;
+    header {
+      background: linear-gradient(90deg, #0a2a66, #123c8d);
+      padding: 15px 50px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
-
-    /* TOP BAR / HEADER */
-    header{
-      position:sticky; top:0; z-index:60;
-      backdrop-filter: blur(6px);
-      background: linear-gradient(90deg, rgba(10,42,102,0.95), rgba(207,169,63,0.95));
-      color: #fff;
-      display:flex; align-items:center; justify-content:space-between;
-      padding:12px 26px;
-      box-shadow: 0 6px 18px rgba(10,42,102,0.12);
+    header img {
+      height: 60px;
     }
-    .brand{display:flex; align-items:center; gap:14px}
-    .brand img{height:56px; width:auto; border-radius:8px; object-fit:cover; box-shadow: 0 4px 12px rgba(0,0,0,0.15);}
-    .brand h1{font-size:18px; margin:0; font-weight:700; letter-spacing:0.2px}
-    nav a{color:rgba(255,255,255,0.95); text-decoration:none; margin-left:18px; font-weight:600;}
-    nav a:hover{color:#fff; text-decoration:underline; opacity:0.95}
-
-    /* HERO */
-    .hero{
-      display:flex; gap:36px; align-items:center; justify-content:space-between;
-      max-width:1200px; margin:28px auto; padding:36px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.92));
-      border-radius:18px; box-shadow: 0 10px 30px rgba(19,38,85,0.08);
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
     }
-    .hero-left{flex:1; padding:6px 22px;}
-    .hero-left small{display:inline-block; background:var(--gold); color:var(--blue); padding:6px 12px; border-radius:999px; font-weight:700; font-size:13px}
-    .hero-left h2{font-size:32px; margin:18px 0 12px; color:var(--blue); line-height:1.05}
-    .hero-left p{color:var(--muted); font-size:16px; margin:0 0 18px}
-    .cta-row{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
-    .btn-primary{background:linear-gradient(90deg,var(--gold), #f5d37f); color:var(--blue); padding:14px 20px; border-radius:12px; font-weight:700; border:none; text-decoration:none; box-shadow: 0 8px 24px rgba(207,169,63,0.18)}
-    .btn-outline{background:transparent; color:var(--blue); padding:12px 18px; border-radius:12px; border:2px solid rgba(10,42,102,0.08); text-decoration:none; font-weight:600}
-    .hero-right{width:300px; flex-shrink:0; display:flex; justify-content:center; align-items:center}
-    .profile-photo{width:300px; height:300px; border-radius:16px; object-fit:cover; box-shadow: 0 18px 50px rgba(10,42,102,0.18); border:6px solid #fff; transform:translateY(0)}
+    nav a:hover { color: #ffcc33; }
 
-    /* 7 STEPS */
-    .section{max-width:1200px; margin:26px auto; padding:28px}
-    .steps{display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:18px}
-    .step-card{background:linear-gradient(180deg,#fff,#fbfdff); border-radius:12px; padding:20px; border-left:6px solid var(--blue); box-shadow: 0 6px 20px rgba(23,33,68,0.06); transition: transform .28s ease, box-shadow .28s ease}
-    .step-card:hover{transform:translateY(-6px); box-shadow: 0 14px 40px rgba(23,33,68,0.09)}
-    .step-num{width:46px;height:46px;border-radius:10px;background:var(--gold); color:var(--blue); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:18px; margin-bottom:12px}
-    .step-title{font-weight:700; color:var(--blue); margin:0 0 8px}
-    .step-desc{color:var(--muted); margin:0; font-size:14px}
-
-    /* PACKAGES */
-    .packages-wrap{max-width:1200px; margin:22px auto; padding:26px}
-    .packages-grid{display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:22px}
-    .pkg{border-radius:14px; padding:22px; color:var(--blue); background:linear-gradient(180deg,#fff,#fcfeff); box-shadow: 0 10px 30px rgba(11,27,58,0.06); position:relative; overflow:hidden; border-top:6px solid var(--gold); transition: transform .28s ease}
-    .pkg:hover{transform:translateY(-8px)}
-    .pkg h3{margin:0 0 8px; font-size:18px; color:var(--blue)}
-    .pkg p{color:var(--muted); margin:0 0 14px; font-size:14px}
-    .pkg ul{padding-left:18px; margin:8px 0 12px; color:#45505f}
-    .pkg .pkg-cta{display:inline-block; padding:10px 16px; border-radius:10px; background:var(--blue); color:#fff; text-decoration:none; font-weight:700}
-    .pkg .pkg-cta:hover{background:#082244}
-
-    /* HIGHLIGHT BANNER */
-    .highlight{
-      max-width:1200px; margin:18px auto; padding:20px; border-radius:12px; background: linear-gradient(90deg, rgba(10,42,102,0.95), rgba(207,169,63,0.95)); color:white; display:flex; gap:20px; align-items:center; justify-content:space-between;
-      box-shadow: 0 14px 40px rgba(10,42,102,0.12);
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 80px 40px;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .highlight .txt{max-width:900px}
-    .highlight h3{margin:0 0 8px; font-size:20px}
-    .highlight p{margin:0; color:rgba(255,255,255,0.95)}
-
-    /* CONTACT / FOOTER */
-    footer{margin-top:32px; background:var(--blue); color:#fff; padding:26px 18px; text-align:center; border-top:6px solid var(--gold)}
-    .contact-row{display:flex; gap:12px; align-items:center; justify-content:center; flex-wrap:wrap}
-    .contact-row a{color:#fff; text-decoration:none; font-weight:700; background:rgba(255,255,255,0.06); padding:10px 16px; border-radius:10px}
-
-    /* FLOATING WHATSAPP */
-    .whatsapp-float{
-      position:fixed; right:18px; bottom:18px; z-index:120;
-      background: #25d366; color:#fff; border-radius:14px; box-shadow: 0 10px 30px rgba(37,211,102,0.18);
-      display:flex; align-items:center; gap:10px; padding:12px 16px; text-decoration:none; font-weight:800
+    .hero img {
+      max-width: 480px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .hero-text {
+      max-width: 500px;
+    }
+    .hero-text h1 {
+      color: #0a2a66;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .hero-text p {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.6;
     }
 
-    /* small screens */
-    @media (max-width:900px){
-      .hero{flex-direction:column; text-align:center}
-      .hero-right{order:-1}
-      .profile-photo{width:240px;height:240px}
-      header{padding:12px}
+    .steps {
+      text-align: center;
+      padding: 60px 20px;
+      background: #f7faff;
+    }
+    .steps h2 {
+      color: #0a2a66;
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 20px;
+    }
+    .step-card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .step-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .step-card h3 {
+      color: #123c8d;
+      margin-bottom: 10px;
+    }
+
+    .plans {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(120deg, #0a2a66, #123c8d);
+      color: white;
+    }
+    .plans h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .plan-card {
+      background: white;
+      color: #333;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+    .plan-card:hover {
+      transform: translateY(-5px);
+    }
+    .plan-card h3 {
+      color: #0a2a66;
+      margin-bottom: 15px;
+    }
+    .plan-card p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      background: #0a2a66;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ffcc33;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-
-  <!-- HEADER -->
   <header>
-    <div class="brand-left">
-      <div class="brand">
-        <img src="IMG_4928.jpeg" alt="Logo FBS Consultoria" onerror="this.style.display='none'"/>
-        <h1>FBS Consultoria</h1>
-      </div>
-    </div>
-
+    <img src="logo.png" alt="Logo FBS Consultoria">
     <nav>
-      <a href="#hero">Início</a>
+      <a href="#home">Home</a>
       <a href="#steps">7 Passos</a>
       <a href="#plans">Planos</a>
-      <a href="#contato">Contato</a>
+      <a href="mailto:fbs.consultoria360@gmail.com">Contato</a>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <main>
-    <section id="hero" class="hero" aria-label="Apresentação">
-      <div class="hero-left">
-        <small>NAVEGUE COM SEGURANÇA</small>
-        <h2>Conquiste contratos públicos com estratégia e segurança</h2>
-        <p>Sou Flávia Barbosa — especialista em licitações. Transformo processos complexos em vitórias comerciais para sua empresa.</p>
-        <div class="cta-row">
-          <a class="btn-primary" href="https://wa.me/5538991480560" target="_blank" rel="noopener">💬 Solicitar Consultoria</a>
-          <a class="btn-outline" href="#plans">Ver Planos</a>
-        </div>
+  <!-- Hero Section -->
+  <div class="hero" id="home">
+    <div class="hero-text">
+      <h1>Consultoria Estratégica em Licitações</h1>
+      <p>Transforme sua empresa em uma vencedora no mercado público com estratégias profissionais e resultados comprovados.</p>
+      <p><strong>Email:</strong> fbs.consultoria360@gmail.com</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=900&q=80" alt="Consultoria Corporativa">
+  </div>
+
+  <!-- 7 Passos -->
+  <section class="steps" id="steps">
+    <h2>7 Passos para Vencer uma Licitação</h2>
+    <div class="steps-grid">
+      <div class="step-card"><h3>1️⃣ Entenda o Edital</h3><p>Leitura completa e interpretação estratégica dos editais.</p></div>
+      <div class="step-card"><h3>2️⃣ Organize Documentos</h3><p>Tenha toda a documentação regularizada e atualizada.</p></div>
+      <div class="step-card"><h3>3️⃣ Planeje a Estratégia</h3><p>Identifique oportunidades e avalie riscos de cada certame.</p></div>
+      <div class="step-card"><h3>4️⃣ Faça a Proposta Certa</h3><p>Monte propostas competitivas sem comprometer a lucratividade.</p></div>
+      <div class="step-card"><h3>5️⃣ Use Ferramentas Digitais</h3><p>Automatize processos e economize tempo nas licitações.</p></div>
+      <div class="step-card"><h3>6️⃣ Acompanhe o Processo</h3><p>Monitore cada etapa da licitação para agir rapidamente.</p></div>
+      <div class="step-card"><h3>7️⃣ Feche com Sucesso</h3><p>Garanta a execução eficiente do contrato e novas vitórias!</p></div>
+    </div>
+  </section>
+
+  <!-- Planos -->
+  <section class="plans" id="plans">
+    <h2>Planos de Consultoria FBS</h2>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <h3>Plano Inicial</h3>
+        <p>Ideal para quem está começando nas licitações e quer entender os primeiros passos com segurança e suporte especializado.</p>
       </div>
-
-      <div class="hero-right">
-        <!-- sua foto -->
-        <img src="b50f1646-f14f-43da-bb2d-acc162a8a3bd.jpeg" alt="Foto de Flávia Barbosa" class="profile-photo" />
+      <div class="plan-card">
+        <h3>Plano Avançado</h3>
+        <p>Para empresas que já participam de licitações e buscam resultados melhores com acompanhamento e análise estratégica.</p>
       </div>
-    </section>
-
-    <!-- 7 PASSOS -->
-    <section id="steps" class="section" aria-label="7 passos">
-      <h2 style="text-align:center; color:var(--blue); margin-bottom:18px">🚀 7 Passos Para Ganhar uma Licitação</h2>
-      <div class="steps">
-        <div class="step-card">
-          <div class="step-num">1</div>
-          <h4 class="step-title">Escolha o Edital Certo</h4>
-          <p class="step-desc">Selecionamos oportunidades alinhadas ao seu core business para maximizar chances reais de vitória.</p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-num">2</div>
-          <h4 class="step-title">Analise o Edital com Precisão</h4>
-          <p class="step-desc">Identificamos riscos e exigências que podem desclassificar propostas — você participa com segurança.</p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-num">3</div>
-          <h4 class="step-title">Organize a Documentação</h4>
-          <p class="step-desc">Montagem e conferência de documentos conforme a legislação e critérios do edital.</p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-num">4</div>
-          <h4 class="step-title">Monte Proposta Estratégica</h4>
-          <p class="step-desc">Precificação e estrutura da proposta para ser competitiva sem abrir mão da margem.</p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-num">5</div>
-          <h4 class="step-title">Participe no Momento Certo</h4>
-          <p class="step-desc">Acompanhamento em tempo real no pregão eletrônico — você toma decisões informadas.</p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-num">6</div>
-          <h4 class="step-title">Defesa Técnica e Recursos</h4>
-          <p class="step-desc">Elaboração de recursos e impugnações com embasamento técnico para reverter indeferimentos.</p>
-        </div>
-
-        <div class="step-card">
-          <div class="step-num">7</div>
-          <h4 class="step-title">Assinatura e Execução do Contrato</h4>
-          <p class="step-desc">Apoio na assinatura e gestão inicial do contrato para entregar resultados e reputação ao setor público.</p>
-        </div>
+      <div class="plan-card">
+        <h3>Plano Premium</h3>
+        <p>Consultoria completa e personalizada, com suporte total, análise detalhada e estratégias exclusivas para vencer editais.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- HIGHLIGHT CTA -->
-    <section class="highlight" aria-hidden="false">
-      <div class="txt">
-        <h3>Precisa de ajuda agora?</h3>
-        <p>Escolha um pacote e tenha suporte de uma especialista do início ao fim do processo. Atendimento rápido e foco em resultado.</p>
-      </div>
-      <div>
-        <a class="btn-primary" href="https://wa.me/5538991480560" target="_blank" rel="noopener">Fale com a Flávia</a>
-      </div>
-    </section>
-
-    <!-- PACKAGES (no menu 'Planos') -->
-    <section id="plans" class="packages-wrap" aria-label="Planos de consultoria">
-      <h2 style="text-align:center; color:var(--blue); margin-bottom:14px">Planos de Consultoria</h2>
-      <p style="text-align:center; color:var(--muted); max-width:900px; margin:0 auto 18px">Escolha o pacote ideal — os preços não são exibidos aqui. Clique em "Solicitar" para conversar sobre o melhor formato para sua empresa.</p>
-
-      <div class="packages-grid">
-        <article class="pkg" aria-labelledby="pkg1">
-          <h3 id="pkg1">ANÁLISE JURÍDICA EXPRESSA</h3>
-          <p><strong>Ideal para decisão rápida.</strong> Avaliamos o edital, identificamos riscos e entregamos um parecer objetivo com recomendação.</p>
-          <ul>
-            <li>Análise completa do edital</li>
-            <li>Parecer de Risco (Participar / Abster)</li>
-            <li>Prazo de entrega curto</li>
-          </ul>
-          <a class="pkg-cta" href="https://wa.me/5538991480560?text=Tenho%20interesse%20no%20Plano%20An%C3%A1lise%20Jur%C3%ADdica%20Expressa" target="_blank" rel="noopener">Solicitar</a>
-        </article>
-
-        <article class="pkg" aria-labelledby="pkg2">
-          <h3 id="pkg2">HABILITAÇÃO ASSEGURADA</h3>
-          <p><strong>Documentação na mão.</strong> Montagem, formatação e conferência de toda a documentação de habilitação e proposta.</p>
-          <ul>
-            <li>Tudo do Plano Expressa</li>
-            <li>Organização e conferência documental</li>
-            <li>Suporte para exigências técnicas</li>
-          </ul>
-          <a class="pkg-cta" href="https://wa.me/5538991480560?text=Tenho%20interesse%20no%20Plano%20Habilita%C3%A7%C3%A3o%20Assegurada" target="_blank" rel="noopener">Solicitar</a>
-        </article>
-
-        <article class="pkg" aria-labelledby="pkg3">
-          <h3 id="pkg3">SUCESSO PREMIUM</h3>
-          <p><strong>Do lance ao contrato.</strong> Gestão completa, suporte em tempo real no pregão e defesa técnica (recursos/impugnações).</p>
-          <ul>
-            <li>Tudo do Plano Habilitação</li>
-            <li>Acompanhamento em tempo real no pregão</li>
-            <li>Elaboração de recursos e impugnações</li>
-          </ul>
-          <a class="pkg-cta" href="https://wa.me/5538991480560?text=Tenho%20interesse%20no%20Plano%20Sucesso%20Premium" target="_blank" rel="noopener">Solicitar</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- CONTACT / FOOTER -->
-    <footer id="contato">
-      <div style="max-width:1100px; margin:0 auto; padding:6px 8px;">
-        <div style="margin-bottom:12px; font-weight:700; font-size:16px">Entre em contato</div>
-        <div class="contact-row">
-          <a href="https://wa.me/5538991480560" target="_blank" rel="noopener">WhatsApp: (38) 99148-0560</a>
-          <a href="mailto:fbs.consultoria360@gmail.com">E-mail: fbs.consultoria360@gmail.com</a>
-        </div>
-
-        <p style="color:rgba(255,255,255,0.87); margin-top:14px">© 2025 FBS Consultoria | Especialista em Licitações</p>
-      </div>
-    </footer>
-
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <a class="whatsapp-float" href="https://wa.me/5538991480560" target="_blank" rel="noopener">
-      💬 Falar no WhatsApp
-    </a>
-
-  </main>
-
-  <!-- Optional: small script to add tracking of active menu (visual) -->
-  <script>
-    // highlight menu on scroll (simple)
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('header nav a');
-
-    function onScroll(){
-      const scrollPos = window.scrollY + 120;
-      sections.forEach(sec=>{
-        const top = sec.offsetTop;
-        const bottom = top + sec.offsetHeight;
-        const id = sec.getAttribute('id');
-        const link = document.querySelector('header nav a[href="#'+id+'"]');
-        if(link){
-          if(scrollPos >= top && scrollPos < bottom){
-            link.style.textDecoration='underline';
-          } else {
-            link.style.textDecoration='none';
-          }
-        }
-      });
-    }
-    window.addEventListener('scroll', onScroll);
-    onScroll();
-  </script>
-
+  <footer>
+    <p>© 2025 FBS Consultoria | Desenvolvido com 💼 por Flávia Barbosa</p>
+    <p><a href="mailto:fbs.consultoria360@gmail.com">fbs.consultoria360@gmail.com</a></p>
+  </footer>
 </body>
 </html>
