@@ -3,199 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FBS Consultoria - Licitações com Estratégia</title>
+  <title>FBS Consultoria - Consultoria Especializada em Licitações</title>
+  
+  <meta name="description" content="Consultoria especializada em licitações e contratos públicos. Ajude sua empresa a conquistar segurança e estratégia em Pregões Eletrônicos.">
+  <meta name="keywords" content="licitações, consultoria, FBS Consultoria, contratos públicos, pregão eletrônico, Lei 14.133">
+  
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #f2f5ff, #ffffff);
-      color: #333;
+    body { 
+      font-family: 'Poppins', sans-serif; 
+      margin: 0; 
+      background: linear-gradient(180deg, #ffffff, #f3f5ff); 
+      color: #333; 
     }
-    header {
-      background: linear-gradient(90deg, #0a2a66, #123c8d);
-      padding: 15px 50px;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+
+    /* Cabeçalho */
+    header { 
+      background: linear-gradient(90deg, #0a2a66, #cfa93f);
+      padding: 10px 40px; 
+      color: white; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
-    header img {
-      height: 60px;
-    }
-    nav a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-    nav a:hover { color: #ffcc33; }
+    .logo-container { display: flex; align-items: center; }
+    .logo-container img { height: 60px; margin-right: 15px; }
+    .logo-container h1 { font-size: 22px; margin: 0; }
+    nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+    nav a:hover { color: #fdd835; }
 
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      padding: 80px 40px;
-      background: white;
+    /* Hero */
+    .hero { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-around; 
+      padding: 60px 40px; 
+      background: white; 
+      flex-wrap: wrap;
+    }
+    .hero img { 
+      max-width: 420px; /* aumentei o tamanho da sua foto */
+      border-radius: 15px; 
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .hero img {
-      max-width: 480px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    .hero-text { max-width: 500px; }
+    .hero-text h1 { color: #0a2a66; font-size: 36px; }
+    .hero-text p { font-size: 18px; line-height: 1.6; color: #444; }
+
+    /* Seções */
+    .section { padding: 50px; text-align: center; }
+    .section h2 { color: #0a2a66; margin-bottom: 30px; font-size: 28px; }
+
+    /* Cards de Serviço */
+    .services { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap: 30px; 
+      max-width: 1200px; 
+      margin: 0 auto; 
     }
-    .hero-text {
-      max-width: 500px;
+    .service-card { 
+        background: white; 
+        border-radius: 15px; 
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+        overflow: hidden; 
+        transition: transform 0.3s; 
+        padding-bottom: 20px; 
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
     }
-    .hero-text h1 {
-      color: #0a2a66;
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    .hero-text p {
-      font-size: 18px;
-      color: #444;
-      line-height: 1.6;
+    .service-card:hover { transform: scale(1.03); }
+    .service-card img { width: 100%; height: 180px; object-fit: cover; }
+    .service-card h3 { margin: 15px 0 10px; color: #0a2a66; }
+    .service-card p { padding: 0 15px; font-size: 15px; line-height: 1.5; text-align: left; }
+
+    footer { 
+      text-align: center; 
+      background: #0a2a66; 
+      color: white; 
+      padding: 20px; 
+      margin-top: 40px; 
     }
 
-    .steps {
-      text-align: center;
-      padding: 60px 20px;
-      background: #f7faff;
-    }
-    .steps h2 {
-      color: #0a2a66;
-      font-size: 30px;
-      margin-bottom: 30px;
-    }
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      padding: 20px;
-    }
-    .step-card {
-      background: white;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-    .step-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    .step-card h3 {
-      color: #123c8d;
-      margin-bottom: 10px;
-    }
-
-    .plans {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(120deg, #0a2a66, #123c8d);
-      color: white;
-    }
-    .plans h2 {
-      font-size: 32px;
-      margin-bottom: 40px;
-    }
-    .plans-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-    .plan-card {
-      background: white;
-      color: #333;
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: 0.3s;
-    }
-    .plan-card:hover {
-      transform: translateY(-5px);
-    }
-    .plan-card h3 {
-      color: #0a2a66;
-      margin-bottom: 15px;
-    }
-    .plan-card p {
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    footer {
-      text-align: center;
-      background: #0a2a66;
-      color: white;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    footer a {
-      color: #ffcc33;
-      text-decoration: none;
+    /* Responsivo */
+    @media (max-width: 768px) {
+      header { flex-direction: column; padding: 15px 20px; }
+      nav a { display: block; margin: 5px 0; }
+      .hero { flex-direction: column; padding: 30px 20px; }
+      .hero img { max-width: 85%; margin-bottom: 20px; }
+      .services { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Logo FBS Consultoria">
+    <div class="logo-container">
+      <img src="IMG_4928.jpeg" alt="Logo FBS Consultoria">
+      <h1>FBS Consultoria</h1>
+    </div>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#steps">7 Passos</a>
-      <a href="#plans">Planos</a>
+      <a href="index.html">Home</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="planos.html">Planos</a>
       <a href="mailto:fbs.consultoria360@gmail.com">Contato</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <div class="hero" id="home">
+  <!-- Hero -->
+  <div class="hero">
     <div class="hero-text">
-      <h1>Consultoria Estratégica em Licitações</h1>
-      <p>Transforme sua empresa em uma vencedora no mercado público com estratégias profissionais e resultados comprovados.</p>
-      <p><strong>Email:</strong> fbs.consultoria360@gmail.com</p>
+      <h1>Consultoria Especializada em Licitações</h1>
+      <p>Ajudo empresas a conquistarem contratos públicos com segurança, estratégia e resultados reais.</p>
     </div>
-    <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=900&q=80" alt="Consultoria Corporativa">
+    <img src="b50f1646-f14f-43da-bb2d-acc162a8a3bd.jpeg" alt="Foto de Flávia Barbosa">
   </div>
 
-  <!-- 7 Passos -->
-  <section class="steps" id="steps">
-    <h2>7 Passos para Vencer uma Licitação</h2>
-    <div class="steps-grid">
-      <div class="step-card"><h3>1️⃣ Entenda o Edital</h3><p>Leitura completa e interpretação estratégica dos editais.</p></div>
-      <div class="step-card"><h3>2️⃣ Organize Documentos</h3><p>Tenha toda a documentação regularizada e atualizada.</p></div>
-      <div class="step-card"><h3>3️⃣ Planeje a Estratégia</h3><p>Identifique oportunidades e avalie riscos de cada certame.</p></div>
-      <div class="step-card"><h3>4️⃣ Faça a Proposta Certa</h3><p>Monte propostas competitivas sem comprometer a lucratividade.</p></div>
-      <div class="step-card"><h3>5️⃣ Use Ferramentas Digitais</h3><p>Automatize processos e economize tempo nas licitações.</p></div>
-      <div class="step-card"><h3>6️⃣ Acompanhe o Processo</h3><p>Monitore cada etapa da licitação para agir rapidamente.</p></div>
-      <div class="step-card"><h3>7️⃣ Feche com Sucesso</h3><p>Garanta a execução eficiente do contrato e novas vitórias!</p></div>
-    </div>
-  </section>
+  <!-- Seção de Planos -->
+  <div class="section">
+    <h2>Nossos Pacotes de Consultoria</h2>
+    <div class="services">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Análise Jurídica Expressa">
+        <div>
+          <h3>01. ANÁLISE JURÍDICA EXPRESSA</h3>
+          <p><strong>Avaliação Rápida de Risco:</strong> ideal para decisões seguras em 48h.<br>
+          Análise completa do edital, parecer técnico e recomendação final.</p>
+        </div>
+      </div>
 
-  <!-- Planos -->
-  <section class="plans" id="plans">
-    <h2>Planos de Consultoria FBS</h2>
-    <div class="plans-grid">
-      <div class="plan-card">
-        <h3>Plano Inicial</h3>
-        <p>Ideal para quem está começando nas licitações e quer entender os primeiros passos com segurança e suporte especializado.</p>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Habilitação Assegurada">
+        <div>
+          <h3>02. HABILITAÇÃO ASSEGURADA</h3>
+          <p>Ideal para quem já decidiu participar e precisa de segurança.<br>
+          Inclui análise jurídica + montagem e conferência completa da documentação.</p>
+        </div>
       </div>
-      <div class="plan-card">
-        <h3>Plano Avançado</h3>
-        <p>Para empresas que já participam de licitações e buscam resultados melhores com acompanhamento e análise estratégica.</p>
-      </div>
-      <div class="plan-card">
-        <h3>Plano Premium</h3>
-        <p>Consultoria completa e personalizada, com suporte total, análise detalhada e estratégias exclusivas para vencer editais.</p>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Sucesso Premium">
+        <div>
+          <h3>03. SUCESSO PREMIUM</h3>
+          <p>Suporte completo do início ao fim: gestão de lances, defesa legal e acompanhamento total até o contrato assinado.</p>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <footer>
-    <p>© 2025 FBS Consultoria | Desenvolvido com 💼 por Flávia Barbosa</p>
-    <p><a href="mailto:fbs.consultoria360@gmail.com">fbs.consultoria360@gmail.com</a></p>
+    <p>© 2025 - FBS Consultoria | Especialista em Licitações</p>
   </footer>
 </body>
 </html>
