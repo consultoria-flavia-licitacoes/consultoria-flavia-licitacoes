@@ -3,243 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FBS Escritório | Consultoria e Burocracia</title>
+    <title>FBS Escritório | Consultoria Especializada</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Estilos Globais */
+        :root {
+            --azul-escuro: #0a2a66;
+            --azul-premium: #16408d;
+            --verde-wpp: #25d366;
+            --fundo: #f8fafc;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            scroll-behavior: smooth;
-        }
-
-        header {
-            background-color: #0a2a66;
-            color: white;
-            padding: 15px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header h1 {
-            font-size: 20px;
-            margin: 0;
-            letter-spacing: 1px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #25d366;
-        }
-
-        /* Seção Hero */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 80px 50px;
-            gap: 40px;
-            flex-wrap: wrap;
-            background: white;
-        }
-
-        .hero img {
-            width: 400px;
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .hero-text {
-            max-width: 500px;
-        }
-
-        .hero-text h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #0a2a66;
-            line-height: 1.2;
-        }
-
-        .hero-text p {
-            font-size: 18px;
-            margin-bottom: 30px;
+            background-color: var(--fundo);
+            color: #333;
             line-height: 1.6;
-            color: #444;
         }
 
-        /* Botão WhatsApp */
-        .btn-whatsapp {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #25d366;
+        /* Cabeçalho */
+        header {
+            background: var(--azul-escuro);
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 18px;
-            transition: transform 0.3s, background 0.3s;
-            box-shadow: 0px 4px 10px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #1ebe5a;
-            transform: scale(1.05);
-        }
-
-        /* Seção de Serviços */
-        .services-section {
-            padding: 70px 50px;
+            padding: 20px 5%;
             text-align: center;
-            background-color: #f4f7f9;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .services-section h2 {
-            color: #0a2a66;
-            font-size: 30px;
-            margin-bottom: 40px;
+        header h1 { margin: 0; font-size: 24px; letter-spacing: 2px; text-transform: uppercase; }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 42, 102, 0.8), rgba(10, 42, 102, 0.8)), 
+                        url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1470') no-repeat center center/cover;
+            padding: 100px 20px;
+            color: white;
+            text-align: center;
         }
 
-        .services-container {
-            display: flex;
-            justify-content: center;
+        .hero h2 { font-size: 38px; margin-bottom: 20px; }
+        .hero p { font-size: 20px; max-width: 800px; margin: 0 auto 30px; opacity: 0.9; }
+
+        /* Grid de Serviços */
+        .container {
+            max-width: 1200px;
+            margin: -50px auto 50px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
-            flex-wrap: wrap;
         }
 
-        .service-card {
+        /* Cards de Serviço */
+        .card {
             background: white;
-            border-top: 6px solid #0a2a66;
-            padding: 30px;
-            width: 260px;
-            border-radius: 10px;
-            box-shadow: 0px 6px 15px rgba(0,0,0,0.05);
-            text-align: left;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border-top: 6px solid var(--azul-escuro);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .service-card h3 {
-            color: #0a2a66;
-            font-size: 22px;
-            margin-bottom: 15px;
-        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
 
-        .service-card p {
-            font-size: 15px;
-            color: #666;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
+        .card i { font-size: 45px; color: var(--azul-escuro); margin-bottom: 20px; }
+        .card h3 { color: var(--azul-escuro); font-size: 22px; margin-bottom: 15px; }
+        .card p { color: #666; font-size: 15px; margin-bottom: 25px; flex-grow: 1; }
 
-        .btn-small {
+        /* Botão */
+        .btn {
+            background: var(--azul-escuro);
+            color: white;
             text-decoration: none;
-            color: #0a2a66;
+            padding: 12px 25px;
+            border-radius: 8px;
             font-weight: bold;
-            font-size: 14px;
-            border: 1px solid #0a2a66;
-            padding: 8px 12px;
-            border-radius: 4px;
-            text-align: center;
             transition: 0.3s;
         }
 
-        .btn-small:hover {
-            background-color: #0a2a66;
+        .btn:hover { background: var(--verde-wpp); }
+
+        /* Botão Flutuante */
+        .float-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--verde-wpp);
             color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
         }
 
         footer {
-            text-align: center;
-            padding: 30px;
-            background-color: #0a2a66;
+            background: var(--azul-escuro);
             color: white;
+            text-align: center;
+            padding: 50px 20px;
         }
 
-        /* Ajustes para Celular */
         @media (max-width: 768px) {
-            header { padding: 15px 20px; flex-direction: column; gap: 10px; }
-            .hero { padding: 40px 20px; text-align: center; }
-            .hero-text h2 { font-size: 28px; }
+            .hero h2 { font-size: 28px; }
+            .hero p { font-size: 16px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>FBS ESCRITÓRIO</h1>
-        <nav>
-            <a href="#">Início</a>
-            <a href="#servicos">Serviços</a>
-            <a href="https://wa.me/5500999999999?text=Olá! Gostaria de uma consultoria." target="_blank">Contato</a>
-        </nav>
-    </header>
+<header>
+    <h1>FBS ESCRITÓRIO</h1>
+</header>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h2>Soluções Burocráticas para sua Empresa.</h2>
-            <p>Especialistas em Licitações, Gestão de MEI, Recursos de Multas e Contratos. Segurança jurídica para você focar no que realmente importa.</p>
-            <a href="https://wa.me/5500999999999?text=Olá! Vi o site do FBS Escritório e gostaria de mais informações." class="btn-whatsapp" target="_blank">Falar no WhatsApp</a>
-        </div>
-        <img src="https://images.unsplash.com/photo-1454165833767-027ffea9e7a7?q=80&w=1000" alt="Consultoria FBS">
-    </section>
+<section class="hero">
+    <h2>Consultoria Especializada</h2>
+    <p>Descomplicamos a burocracia para você focar no que importa: o seu crescimento.</p>
+    <a href="https://wa.me/5538991480560" class="btn" style="background: var(--verde-wpp); font-size: 18px;">Falar com Consultor</a>
+</section>
 
-    <section class="services-section" id="servicos">
-        <h2>Nossos Especialistas Resolvem:</h2>
-        <div class="services-container">
-            
-            <div class="service-card">
-                <div>
-                    <h3>⚖️ Recursos de Multas</h3>
-                    <p>Defesas administrativas para multas de trânsito ou penalidades contratuais em licitações.</p>
-                </div>
-                <a href="https://wa.me/5500999999999?text=Olá! Preciso de ajuda com Recurso de Multa." class="btn-small">Saiba Mais</a>
-            </div>
+<div class="container">
+    
+    <div class="card">
+        <i class="fas fa-trophy"></i>
+        <h3>Licitações</h3>
+        <p>Análise de editais, montagem de documentação e suporte para vender para o governo.</p>
+        <a href="https://wa.me/5538991480560?text=Olá! Quero saber sobre Licitações." class="btn">Solicitar</a>
+    </div>
 
-            <div class="service-card">
-                <div>
-                    <h3>🏢 Gestão de MEI</h3>
-                    <p>Abertura, Declaração Anual (DASN), parcelamento de débitos e regularização total.</p>
-                </div>
-                <a href="https://wa.me/5500999999999?text=Olá! Preciso de ajuda com meu MEI." class="btn-small">Saiba Mais</a>
-            </div>
+    <div class="card">
+        <i class="fas fa-balance-scale"></i>
+        <h3>Recursos de Multas</h3>
+        <p>Defesas administrativas para multas de trânsito ou penalidades contratuais.</p>
+        <a href="https://wa.me/5538991480560?text=Olá! Preciso de ajuda com Recurso de Multa." class="btn">Solicitar</a>
+    </div>
 
-            <div class="service-card">
-                <div>
-                    <h3>🏆 Licitações</h3>
-                    <p>Análise de editais, montagem de documentação e acompanhamento em pregões eletrônicos.</p>
-                </div>
-                <a href="https://wa.me/5500999999999?text=Olá! Quero vender para o governo através de Licitações." class="btn-small">Saiba Mais</a>
-            </div>
+    <div class="card">
+        <i class="fas fa-id-card"></i>
+        <h3>Abertura & MEI</h3>
+        <p>Abertura de CNPJ, Declaração Anual (DASN) e acompanhamento de datas e impostos.</p>
+        <a href="https://wa.me/5538991480560?text=Olá! Preciso de ajuda com meu MEI." class="btn">Solicitar</a>
+    </div>
 
-            <div class="service-card">
-                <div>
-                    <h3>📜 Certidões e Notas</h3>
-                    <p>Emissão de CNDs, Inscrição Municipal e suporte para emissão de Notas Fiscais.</p>
-                </div>
-                <a href="https://wa.me/5500999999999?text=Olá! Preciso emitir Certidões ou Notas Fiscais." class="btn-small">Saiba Mais</a>
-            </div>
+    <div class="card">
+        <i class="fas fa-file-contract"></i>
+        <h3>Certidões Negativas</h3>
+        <p>Baixa de CNDs Federais, Estaduais e Municipais para regularizar sua empresa.</p>
+        <a href="https://wa.me/5538991480560?text=Olá! Preciso baixar Certidões Negativas." class="btn">Solicitar</a>
+    </div>
 
-        </div>
-    </section>
+    <div class="card">
+        <i class="fas fa-file-invoice"></i>
+        <h3>Inscrição & Notas</h3>
+        <p>Inscrição Municipal para nota fiscal e elaboração de contratos personalizados.</p>
+        <a href="https://wa.me/5538991480560?text=Olá! Preciso de Inscrição Municipal ou Notas." class="btn">Solicitar</a>
+    </div>
 
-    <footer>
-        <p>&copy; 2026 FBS Escritório - Consultoria Especializada</p>
-    </footer>
+</div>
+
+<footer>
+    <p><strong>FBS ESCRITÓRIO - CONSULTORIA ESPECIALIZADA</strong></p>
+    <p>📞 (38) 99148-0560 | Brasília de Minas - MG</p>
+    <p>&copy; 2026 Todos os direitos reservados.</p>
+</footer>
+
+<a href="https://wa.me/5538991480560" class="float-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
-
